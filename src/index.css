@@ -1,0 +1,325 @@
+:root{
+    /*colors*/
+    --background-body: #03353d;
+    --background-components: #062226;
+    --span-color: #7E7E7E;
+    --color-topography: #fff;
+    
+    /*topography*/
+    --Roboto: "Roboto";
+    
+    /*font-size*/
+    --name-card-size: 2rem;
+    --card-description-size: 1.5rem;
+    --card-term-size: 1.125rem;
+
+    /*font-weigth*/
+    --text-card-name: 400;
+    --text-body: 700;
+
+    /*line-height*/
+
+    --name-card-height: 37.5px;
+    --card-description-height: 28.13px;
+    --card-term-height: 21.09px;
+}
+
+/*Quitar
+    border: solid 2px black;
+    margin: 2px;
+    */
+
+html{
+    box-sizing: border-box;
+    color: var(--color-topography);
+    font-family: var(--Roboto);
+    font-weight: var(--text-body);
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.App{
+    min-height: 100vh;
+    background-color: var(--background-body);
+    margin: 0;
+}
+
+.App header{
+    position: relative;
+    top: 0;
+    margin-bottom: 50px;
+}
+
+.App header .background-img{
+    height: 200px;
+    background-image: url("./assets/background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.App header .background-img img{
+    position:absolute;
+    top: 10px;
+    left: 25%;
+    width: 50%;
+    min-height: 140px;
+    margin: 0;
+}
+
+.App header .background-img .search{
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    left: 25%;
+    top: 160px;
+    width: 50%;
+    margin: auto;
+}
+
+.App header .background-img .search form{
+    width: 100%;
+}
+
+.App header .background-img .search form input{
+    background-color: white;
+    font-family: var(--Roboto);
+    color: #062226;
+    height: 30px;
+    width: 70%;
+    padding: 2px;
+    border: none;
+}
+
+.App header .background-img .search form input:focus{
+    outline:none
+}
+
+.App header .background-img .search form button{
+    background-color: rgb(2, 123, 2);
+    font-family: var(--Roboto);
+    color: var(--color-topography);
+    width: 30%;
+    height: 30px;
+    cursor: pointer;
+    padding: 2px;
+    border: none;
+}
+
+.App header .background-img .search form button:focus{
+    outline:none;
+}
+
+.App .content-dimension{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.App .content-dimension article{
+    width: 70%;
+    background-color: var(--background-components);
+}
+
+.App .content-dimension article ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.App .content-dimension article ul li{
+    line-height: var(--card-description-height);
+    font-size: var(--card-description-size);
+}
+
+.App .content-dimension article ul li p{
+    line-height: var(--card-term-height);
+    font-size: var(--card-term-size);
+}
+
+
+.App .content-dimension .card-resident{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+.App .content-dimension .card-resident>:last-child{
+    align-content: flex-start;
+}
+
+
+.App .content-dimension .card-resident .resident {
+    flex-basis: 300px;
+    background-color: var(--background-components);
+}
+
+.App .content-dimension .card-resident .resident:hover{
+    z-index: 10 ;
+    transform: scale(1.1) translate(0, 13px);
+    transition-duration: 0.5s;
+}
+
+.App .content-dimension .card-resident .resident .resident-status {
+    width: 100%;
+    position: relative;
+}
+
+.App .content-dimension .card-resident .resident .resident-status .img-resident{
+    width: 100%;
+}
+
+.App .content-dimension .card-resident .resident .resident-status .status {
+    display: flex;
+    width: 120px;
+    padding: 0.4rem;
+    gap: 5px;
+    background-color: var(--background-components);
+    position: absolute;
+    top: 10px;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+}
+
+.App .content-dimension .card-resident .resident .resident-status .status .status-figure{
+    width: 19px;
+    height: 19px;
+    background-color: #B94343;
+    border-radius: 50%; 
+}
+
+.App .content-dimension .card-resident .resident .resident-status .status p{
+    line-height: var(--card-term-height);
+    font-size: var(--card-term-size);
+    margin: 0;
+}
+
+.App .content-dimension .card-resident .resident .about-resident h3{
+    display: flex;
+    align-items: baseline;
+    font-weight: var(--text-card-name);
+    line-height: var(--name-card-height);
+    font-size: var(--name-card-size);
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.App .content-dimension .card-resident .resident .about-resident hr{
+    width: 98%;
+    height: 0.7px;
+    background-color: #084851;
+    margin: auto;
+    border: none;
+}
+
+.App .content-dimension .card-resident .resident .about-resident ul{
+    list-style: none;
+    margin: 8px 0;
+    padding: 0 0.7rem;
+}
+
+.App .content-dimension .card-resident .resident .about-resident li span{
+    color: var(--span-color);
+    line-height: var(--card-term-height);
+    font-size: var(--card-term-size);
+    margin: 0;
+}
+
+.App .content-dimension .card-resident .resident .about-resident li p{
+    line-height: var(--card-description-height);
+    font-size: var(--card-description-size);
+    margin: 0;
+}
+
+
+@media screen and (min-width: 800px) {
+    .App header .background-img{
+        height: 300px;
+    }
+    
+    .App header .background-img img{
+        position:absolute;
+        top: 40px;
+        left:35%;
+        width: 30%;
+        min-height: 160px;
+    }
+    
+    .App header .background-img .search{
+        position:absolute;
+        left: 25%;
+        top: 210px;
+        width: 50%;
+    }
+}
+
+.loader{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.loader img{
+    height: 400px;
+    width: 400px;
+    animation: loader-spin infinite 5s linear;
+}
+
+.navigation{
+    min-width: 100%;
+}
+
+.navigation nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navigation nav ul a{
+    color: var(--color-topography);
+    text-decoration: none;
+}
+
+.navigation nav ul a:visited{
+    color: var(--color-topography);
+}
+
+.navigation nav ul a{
+    transition: 2s;
+}
+
+.navigation nav ul li{
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1;
+}
+.navigation nav ul .current-page{
+    background-color: #062226;
+}
+
+@keyframes loader-spin {
+    to{
+        transform: rotate(0deg);
+    }
+    
+    from{
+        transform: rotate(360deg);
+    }
+}
